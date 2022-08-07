@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HeaderModule } from 'src/app/shared/header/header.module';
 @NgModule({
   declarations: [AnimesComponent],
   imports: [
@@ -20,7 +21,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ]),
     MatPaginatorModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HeaderModule
   ],
   providers:[AnimesService]
 })

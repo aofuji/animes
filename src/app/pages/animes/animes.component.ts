@@ -37,8 +37,6 @@ export class AnimesComponent implements OnInit, AfterViewInit {
         const pageIndex = Number(paramMap.get('pageIndex'))== 0 ? 0 : Number(paramMap.get('pageIndex'))
         const pageSize = Number(paramMap.get('pageSize')) ? 10 : Number(paramMap.get('pageSize'))
 
-        console.log(pageSize)
-
         if(pageSize){
           this.paginator.pageSize = pageSize
 
@@ -60,7 +58,6 @@ export class AnimesComponent implements OnInit, AfterViewInit {
     this.dataSource = new MatTableDataSource([])
     this.service.get(pageIndex).pipe(take(1))
     .subscribe((res) => {
-      console.log(res)
      this.dataSource = new MatTableDataSource(res)
      this.paginator.length = 100
      this.isLoading = false
@@ -68,10 +65,9 @@ export class AnimesComponent implements OnInit, AfterViewInit {
   }
 
   pageChanged(event: PageEvent) {
-    console.log(event)
 
     const pageIndex = event.pageIndex
-      const pageSize = event.pageSize
+    const pageSize = event.pageSize
 
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
