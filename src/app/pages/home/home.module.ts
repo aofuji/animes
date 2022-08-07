@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { HeaderModule } from 'src/app/shared/header/header.module';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { HeaderModule } from 'src/app/shared/header/header.module';
   imports: [
     CommonModule,
     HeaderModule,
+    MatButtonModule,
     RouterModule.forChild([
       {
         path:'',

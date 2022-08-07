@@ -65,7 +65,6 @@ export class AnimesComponent implements OnInit, AfterViewInit {
   }
 
   pageChanged(event: PageEvent) {
-
     const pageIndex = event.pageIndex
     const pageSize = event.pageSize
 
