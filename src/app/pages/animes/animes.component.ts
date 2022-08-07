@@ -40,16 +40,11 @@ export class AnimesComponent implements OnInit, AfterViewInit {
         this.get(pageIndex)
       })
     }, 300);
-
   }
 
   setPaginator(pageSize:number, pageIndex:number):void {
-    if(pageSize){
       this.paginator.pageSize = pageSize
-    }
-    if(pageIndex){
       this.paginator.pageIndex = pageIndex
-    }
   }
 
   get(pageIndex:any):void {
