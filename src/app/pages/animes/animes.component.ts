@@ -33,24 +33,23 @@ export class AnimesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit():void{
     setTimeout(() => {
       this.activatedRoute.queryParamMap.subscribe((paramMap)=>{
-
         const pageIndex = Number(paramMap.get('pageIndex'))== 0 ? 0 : Number(paramMap.get('pageIndex'))
         const pageSize = Number(paramMap.get('pageSize')) ? 10 : Number(paramMap.get('pageSize'))
 
-        if(pageSize){
-          this.paginator.pageSize = pageSize
-
-        }
-        if(pageIndex){
-          this.paginator.pageIndex = pageIndex
-
-        }
-
+        this.setPaginator(pageSize,pageIndex);
         this.get(pageIndex)
-
       })
     }, 300);
 
+  }
+
+  setPaginator(pageSize:number, pageIndex:number):void {
+    if(pageSize){
+      this.paginator.pageSize = pageSize
+    }
+    if(pageIndex){
+      this.paginator.pageIndex = pageIndex
+    }
   }
 
   get(pageIndex:any):void {
