@@ -7,10 +7,13 @@ export class AnimesService {
 
   constructor(private http:HttpClient) { }
 
-  private URL = 'https://animechan.vercel.app/api/available/anime';
+  private API = 'https://animechan.vercel.app/api/quotes/anime?title=naruto';
 
-  getAll():Observable<any> {
-    return this.http.get<any>(this.URL);
+  get(page?:any):Observable<any> {
+
+    const url = `${this.API}&page=${page}`
+
+    return this.http.get<any>(url);
   }
 
 }
